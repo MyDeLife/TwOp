@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwOp</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/buttons.css">
+    <link rel="stylesheet" href="./styles/pages.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Noto+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <img id="logo" src="assets/TwOp - Logo.png">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link" id="navlink_Get_Tweet">Get Tweet</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="navlink_Change_API_Key">Change API Key</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="navlink_About">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="Enter_API_Key">
+        <h1>Tweet Optimizer!</h1>
+        <fieldset id="enter_api_key_text1">
+            <p>An AI-powered application generating optimized tweet suggestions
+            </p>
+        </fieldset>
+        <fieldset id="enter_api_key_text2">
+            <p>This extension uses your own API key from OpenAI.
+                This <a href="https://platform.openai.com/docs/api-reference/introduction" target="_blank">link</a>
+                provides more information about API keys at OpenAI. Follow this <a
+                    href="https://platform.openai.com/account/api-keys" target="_blank">
+                    link</a> to sign up and obtain an API key for yourself. To get started, enter your API key below:
+            </p>
+        </fieldset>
+
+        <div id="safe_key">
+            <div id="key_input_area">
+                <input id="key_input" class="input-field" />
+                <i class="fas fa-info-circle hover-icon" id="info-api_key_storage"></i>
+            </div>
+            <button id="button_save_key">Update API Key</button>
+        </div>
+        <div id="api_key_msg">
+            <div id="failed_msg">
+                <p id="failed_msg1">Failed!</p>
+                <p id="failed_msg2">API key not updated</p>
+            </div>
+            <div id="success_msg">
+                <p id="success_msg1">Success!</p>
+                <p id="success_msg2">API key stored</p>
+            </div>
+        </div>
+        <div>
+            <i id="no_key" class="fas fa-key hover-icon"></i>
+            <i id="yes_key" class="fas fa-key hover-icon"></i>
+        </div>
+        <div id="remove_key">
+            <p id="remove_key_text">Confirm removing your API key</p>
+            <button id="button_remove_confirm">Remove</button>
+            <button id="button_remove_cancel">Cancel</button>
+        </div>
+        <div id="continue">
+            <button id="button_get_tweet_page">Enter App <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="Get_Tweet">
+        <div id="input-area">
+            <div id="input-area-top">
+                <h1>Get a tweet!</h1>
+                <p id="get-a-tweet-text1">Enter the topic or description of what you want to tweet</p>
+                <label for="main-topic"><textarea placeholder=" Enter topic" id="main-topic" type="text"
+                        class=".main-topic input-field"></textarea></label>
+                <p id="get-a-tweet-text1">Add specific words you want included in the tweet</p>
+                <label for="keywords"><textarea placeholder=" Add keyword(s)" id="keywords" type="text"
+                        class="input-field"></textarea></label>
+            </div>
+            <p id="get-a-tweet-text2">Personalize your tweet by selecting your theme and style</p>
+            <div id="dropdowns">
+                <div id="dropdowns-general">
+                    <div id="dropdowns-general-element">
+                        <fieldset id="general-themes" class="dropdown-themes dropdown-general">
+                            <label for="general-themes-dropdown">
+                                <select id="general-themes-dropdown" name="general-themes-dropdown"
+                                    class="dropdown-element">
+                                    <option value="">Select General Theme</option>
+                                    <option>Animals</option>
+                                    <option>Business</option>
+                                    <option>Education</option>
+                                    <option>Other</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                        <fieldset id="general-style" class="dropdown-styles dropdown-general">
+                            <label for="general-style-dropdown">
+                                <select id="general-style-dropdown" name="general-style-dropdown"
+                                    class="dropdown-element">
+                                    <option value="">Select General Style</option>
+                                    <option>Positive</option>
+                                    <option>Neutral</option>
+                                    <option>Negative</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div id="dropdowns-general-info">
+                        <i class="fas fa-info-circle hover-icon" id="info-general-themes"></i>
+                        <i class="fas fa-info-circle hover-icon" id="info-general-styles"></i>
+                    </div>
+                </div>
+                <div id="dropdowns-specific">
+                    <div id="dropdowns-specific-element">
+                        <fieldset id="specific-theme" class="dropdown-themes dropdown-dummy dropdown-specific">
+                            <label for="specific-theme-dropdown">
+                                <select id="specific-theme-dropdown" name="specific-theme-dropdown"
+                                    class="dropdown-element" disabled="true">
+                                    <option value="">Select Specific Theme</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="animals" class="dropdown-themes dropdown-actual dropdown-specific">
+                            <label for="animals-dropdown">
+                                <select id="animals-dropdown" name="animals-dropdown"
+                                    class="dropdown-element theme-deselect">
+                                    <option value="">Select Specific Theme</option>
+                                    <option>Bird</option>
+                                    <option>Dog</option>
+                                    <option>Cat</option>
+                                    <option>Other</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="business" class="dropdown-themes dropdown-actual dropdown-specific">
+                            <label for="business-dropdown">
+                                <select id="business-dropdown" name="business-dropdown"
+                                    class="dropdown-element theme-deselect">
+                                    <option value="">Select Specific Theme</option>
+                                    <option>HR</option>
+                                    <option>Marketing</option>
+                                    <option>Sales</option>
+                                    <option>Other</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="education" class="dropdown-themes dropdown-actual dropdown-specific">
+                            <label for="education-dropdown">
+                                <select id="education-dropdown" name="education-dropdown"
+                                    class="dropdown-element theme-deselect">
+                                    <option value="">Select Specific Theme</option>
+                                    <option>School</option>
+                                    <option>College</option>
+                                    <option>University</option>
+                                    <option>Other</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="specific-style" class="dropdown-styles dropdown-dummy dropdown-specific">
+                            <label for="specific-style-dropdown">
+                                <select id="specific-style-dropdown" name="specific-style-dropdown"
+                                    class="dropdown-element" disabled="true">
+                                    <option value="">Select Specific Style</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="positive" class="dropdown-styles dropdown-actual dropdown-specific">
+                            <label for="positive-dropdown">
+                                <select id="positive-dropdown" name="positive-dropdown"
+                                    class="dropdown-element style-deselect">
+                                    <option value="">Select Specific Style</option>
+                                    <option>Agreeable</option>
+                                    <option>Awestruck</option>
+                                    <option>Brave</option>
+                                    <option>Cheerful</option>
+                                    <option>Energetic</option>
+                                    <option>Excited</option>
+                                    <option>Festive</option>
+                                    <option>Friendly</option>
+                                    <option>Grateful</option>
+                                    <option>Happy</option>
+                                    <option>Hopeful</option>
+                                    <option>Loving</option>
+                                    <option>Optimistic</option>
+                                    <option>Passionate</option>
+                                    <option>Energetic</option>
+                                    <option>Proud</option>
+                                    <option>Ready for Change</option>
+                                    <option>Relieved</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="neutral" class="dropdown-styles dropdown-actual dropdown-specific">
+                            <label for="neutral-dropdown">
+                                <select id="neutral-dropdown" name="neutral-dropdown"
+                                    class="dropdown-element style-deselect">
+                                    <option value="">Select Specific Style</option>
+                                    <option>Ambitious</option>
+                                    <option>Assertive</option>
+                                    <option>Calm</option>
+                                    <option>Caring</option>
+                                    <option>Cautious</option>
+                                    <option>Confident</option>
+                                    <option>Creative</option>
+                                    <option>Curious</option>
+                                    <option>Eager</option>
+                                    <option>Indifferent</option>
+                                    <option>Mysterious</option>
+                                    <option>Nervous</option>
+                                    <option>Nostalgic</option>
+                                    <option>Peaceful</option>
+                                    <option>Prepared</option>
+                                    <option>Realistic</option>
+                                    <option>Restless</option>
+                                    <option>Romantic</option>
+                                    <option>Sentimental</option>
+                                    <option>Serious</option>
+                                    <option>Shy</option>
+                                    <option>Silly</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset id="negative" class="dropdown-styles dropdown-actual dropdown-specific">
+                            <label for="negative-dropdown">
+                                <select id="negative-dropdown" name="negative-dropdown"
+                                    class="dropdown-element style-deselect">
+                                    <option value="">Select Specific Style</option>
+                                    <option>Angry</option>
+                                    <option>Anxious</option>
+                                    <option>Burdened</option>
+                                    <option>Combative</option>
+                                    <option>Depressed</option>
+                                    <option>Embarrassed</option>
+                                    <option>Envious</option>
+                                    <option>Fearful</option>
+                                    <option>Guilty</option>
+                                    <option>Hateful</option>
+                                    <option>Humiliated</option>
+                                    <option>Hurt</option>
+                                    <option>Irritated</option>
+                                    <option>Lonely</option>
+                                    <option>Panicked</option>
+                                    <option>Pessimistic</option>
+                                    <option>Resentful</option>
+                                    <option>Sad</option>
+                                    <option>Skeptical</option>
+                                    <option>Worried</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="button_get_tweet_area">
+                <button type="submit" value="Submit" id="button_get_tweet" name="submit">Get Tweet</button>
+            </div>
+            <div id="input-area-output">
+                <textarea type="text" value="output_text" class="input-field" readonly id="output_text"
+                    placeholder=""></textarea>
+                <button id="button_copy_text" class="fas fa-copy"></button>
+            </div>
+            <button id="button_reset" class="fas fa-eraser"></button>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+<script src="./scripts/getTweet.js"></script>
+
+</html>
