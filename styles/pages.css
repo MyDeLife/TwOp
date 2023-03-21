@@ -1,0 +1,375 @@
+/*---ENTER API KEY PAGE---*/
+
+
+#Enter_API_Key {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.55rem;
+    width: 85%;
+    height: 100vw;
+    margin: 0px auto
+}
+
+#enter_api_key_text1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 18px 0 0 0;
+}
+
+#enter_api_key_text2 {
+    font-size: 1.5rem;
+    margin: -20px 0 30px 0
+}
+
+#key_input_area {
+    display: flex;
+    justify-items: left;
+}
+
+#key_input {
+    width: 225px;
+    height: 29px;
+    border-radius: 6px;
+}
+
+#api_key_msg {
+    margin-top: -10px;
+
+}
+
+#failed_msg1,
+#success_msg1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#failed_msg,
+#success_msg {
+    font-size: 1.3rem;
+    margin-left: 12px;
+    display: none;
+    animation: api_key_msg;
+    animation-duration: 7000ms;
+    animation-timing-function: ease-out;
+    color: var(--color1);
+    position: fixed;
+    top: 420px;
+    left: 285px;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    line-height: 0.4;
+}
+
+@keyframes api_key_msg {
+    0% {
+        color: var(--font-family);
+    }
+
+    80% {
+        color: var(--font-family);
+    }
+
+    100% {
+        color: var(--color1);
+    }
+}
+
+.fa-info-circle {
+    color: var(--color3);
+    font-size: 1.3rem;
+    margin: 2px 2px 1px 4px
+}
+
+.fa-key {
+    font-size: 2.5rem;
+    top: 380px;
+    left: 355px;
+    position: fixed;
+}
+
+#no_key {
+    color: gray;
+    display: block;
+}
+
+#no_key:hover::after {
+    content: "Your currently have no API key stored. \A\A To use this app, enter your API key above and confirm with the Update API Key button.";
+    position: fixed;
+    width: 260px;
+    top: 378px;
+    left: 40px;
+    background: var(--color3);
+    white-space: pre-line;
+}
+
+#yes_key {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #eca600 10%, #c07d01 30%, #eca600 75%, #c07d01 90%);
+    display: none;
+    cursor: pointer;
+}
+
+#yes_key:hover::after {
+    content: " You currently have an API key stored. \A\A To remove your API key, click the key icon and confirm.";
+    position: fixed;
+    width: 240px;
+    top: 380px;
+    left: 42px;
+    white-space: pre-line;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    -webkit-background-clip: content-box;
+    background-color: var(--color3);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color3);
+    padding: 0 !important
+}
+
+.fa-info-circle:hover::after {
+    width: 195px;
+    position: fixed;
+}
+
+#info-api_key_storage:hover::after {
+    content: "Your API key will be stored in the local extension storage which can only be accessed by yourself. \A\A TwOp does not verify your and only use it for your tweet suggestion queries made via this extension.";
+    display: block;
+    position: fixed;
+    top: 325px;
+    left: 288px;
+    width: 150px !important;
+    background: var(--color3);
+    white-space: pre-line;
+}
+
+#safe_key {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#remove_key {
+    display: none;
+    margin: 120px 0px 0px 6px;
+    width: 240px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 3px outset var(--color2);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    -webkit-box-shadow: 2px 2px 10px 1px var(--color1);
+    box-shadow: 2px 2px 10px 1px var(--color3);
+    background-color: var(--color1);
+    position: fixed;
+    top: 260px;
+    left: 35px;
+}
+
+
+
+/*---GET TWEET PAGE---*/
+
+#Get_Tweet {
+    display: none;
+    flex-direction: column;
+    font-size: 1.6rem;
+    height: 100vw;
+}
+
+#button_get_tweet_area {
+    display: flex;
+    justify-content: center;
+}
+
+.input-field,
+.dropdown-element {
+    background-color: var(--background-input-field);
+}
+
+#input-area-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0px auto 25px auto;
+    font-size: 1.3rem;
+}
+
+#get-a-tweet-text1 {
+    font-size: 1.3rem;
+    width: 75%;
+    margin: 20px auto 5px 45px;
+}
+
+#main-topic {
+    width: 375px;
+    height: 42px;
+    vertical-align: top;
+    margin: 0;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 1.3rem;
+}
+
+#get-a-tweet-text2 {
+    font-size: 1.3rem;
+    width: 75%;
+    margin: 0px auto 5px 45px;
+}
+
+#keywords {
+    width: 375px;
+    height: 24px;
+    margin: 0;
+    text-align: left;
+    font-family: var(--font-family);
+    border-radius: 6px;
+}
+
+#dropdowns {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 5px 0 0px 0px;
+}
+
+.select.dropdown-element {
+    background-color: var(--color1);
+}
+
+.dropdown-element {
+    width: 165px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+}
+
+.dropdown-element:hover {
+    background-color: var(--color2);
+}
+
+#dropdowns-general {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+#dropdowns-general-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 14%;
+}
+
+.style-deselect,
+.theme-deselect {
+    display: none
+}
+
+.hover-icon:hover::after {
+    font-size: 1.2rem;
+    font-family: var(--font-family);
+    font-weight: 400;
+    padding: 5px 5px 5px 8px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    z-index: 1;
+    line-height: 15px;
+    animation: hover-icon;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    transition-duration: 0.5s;
+}
+
+@keyframes hover-icon {
+    0% {
+        display: none
+    }
+
+    50% {
+        display: block
+    }
+
+    100% {
+        display: block
+    }
+
+}
+
+#dropdowns-general-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2.5% 0% 5% -5%
+}
+
+#info-general-styles:hover::after {
+    content: "Adding style selections aligns the generated tweet result with the mood you are aiming to express.\A\A If nothing selected, then a neutral tone will be chosen.";
+    display: block;
+    position: fixed;
+    top: 250px;
+    left: 240px;
+    background: var(--color3);
+    white-space: pre-line;
+}
+
+#info-general-themes:hover::after {
+    content: " Selecting a theme improves the accuracy level of the tweet result to match the context of your topic.\A\A Optional but recommended for a higher quality tweet result.";
+    display: block;
+    position: fixed;
+    top: 250px;
+    left: 240px;
+    background: var(--color3);
+    white-space: pre-line;
+}
+
+#specific-style-dropdown,
+#neutral-dropdown,
+#positive-dropdown,
+#negative-dropdown {
+    position: absolute;
+    top: 40px
+}
+
+#dropdowns-specific {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+#dropdowns-specific-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dropdown-specific,
+.dropdown-dummy {
+    position: absolute;
+    left: 235px
+}
+
+.dropdown-specific:not(.dropdown-themes) {
+    top: 294.2px;
+}
+
+#input-area-output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%
+}
+
+#output_text {
+    width: 375px;
+    height: 130px;
+    border-radius: 6px;
+    border: none;
+    margin: 30px auto 0px auto;
+    font-size: 1.3rem
+}
