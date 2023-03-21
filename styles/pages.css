@@ -229,6 +229,7 @@
     text-align: left;
     font-family: var(--font-family);
     border-radius: 6px;
+    font-size: 1.3rem;
 }
 
 #dropdowns {

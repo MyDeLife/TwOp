@@ -38,6 +38,7 @@ button:hover:not(#button_copy_text, #button_reset), .nav-link:hover {
     align-items: center;
     margin-left: 10px;
     margin-right: -10px;
+    font-size: 1.3rem !important
 }
 
 #button_remove_confirm,
