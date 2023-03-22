@@ -1,0 +1,27 @@
+{
+    "name": "TwOp",
+    "description": "Advancing ideas to stunning, ready-to-send tweet suggestions",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "48": "assets/48.png",
+        "72": "assets/72.png",
+        "96": "assets/96.png",
+        "144": "assets/144.png",
+        "512": "assets/144.png",
+        "1024": "assets/144.png"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "TwOp - Tweet Optimizer"
+    },
+    "background": {
+        "service_worker": "scripts/getTweet.js"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://*/*"
+    ]
+}
