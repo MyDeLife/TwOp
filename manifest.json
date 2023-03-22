@@ -15,9 +15,6 @@
         "default_popup": "index.html",
         "default_title": "TwOp - Tweet Optimizer"
     },
-    "background": {
-        "service_worker": "scripts/getTweet.js"
-    },
     "permissions": [
         "storage"
     ],
