@@ -142,7 +142,7 @@
     display: block;
     position: fixed;
     top: 325px;
-    left: 288px;
+    left: 292px;
     width: 150px !important;
     background: var(--color3);
     white-space: pre-line;
@@ -315,7 +315,7 @@
     content: "Adding style selections aligns the generated tweet result with the mood you are aiming to express.\A\A If nothing selected, then a neutral tone will be chosen.";
     display: block;
     position: fixed;
-    top: 250px;
+    top: 270px;
     left: 240px;
     background: var(--color3);
     white-space: pre-line;
@@ -325,7 +325,7 @@
     content: " Selecting a theme improves the accuracy level of the tweet result to match the context of your topic.\A\A Optional but recommended for a higher quality tweet result.";
     display: block;
     position: fixed;
-    top: 250px;
+    top: 270px;
     left: 240px;
     background: var(--color3);
     white-space: pre-line;
