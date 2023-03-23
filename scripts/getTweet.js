@@ -116,7 +116,7 @@ const generateCompletionAction = async () => {
         3. It must include the following words: ${keywords}.
         4. The tone should be ${generalStyle}, specifically with the characteristics of: ${specificStyle()}.
         5. Do not use adjectives or verbs in your suggestion more than once.
-        6. NEVER include emojis and NEVER include hashtags (i.e. #tweet).
+        6. Include emojis and NEVER include hashtags (i.e. #tweet).
         7. Consider each digit, letter, whitespace, punctuation and symbol as one character. Your response should not exceed a total of 280 characters.
         ${getVoice()}`
 
@@ -128,7 +128,7 @@ const generateCompletionAction = async () => {
 
 
         const secondCompletion = await generate(secondPrompt);
-        let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+/g, '');
+        let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+/g, '').trimStart();
         document.getElementById("output_text").innerHTML = output;
 
 

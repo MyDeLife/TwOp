@@ -306,7 +306,6 @@ function resetAll() {
 }
 
 document.getElementById("button_reset").addEventListener("click", resetAll);
-document.getElementById("button_reset").addEventListener("click", resetAll);
 
 
 //COPY TWEET TEXT
