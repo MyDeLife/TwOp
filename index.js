@@ -157,31 +157,93 @@ document.getElementById('button_remove_confirm').addEventListener('click', delet
 
 //DROPDOWN SELECTIONS - GENERAL THEME TO SPECIFIC THEME 
 document.getElementById("general-themes-dropdown").addEventListener("change", function () {
-    if (this.value === "Animals") {
-        document.getElementById("animals-dropdown").style.display = "block";
+    if (this.value === "Business & Finance") {
+        document.getElementById("business-finance-dropdown").style.display = "block";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "none";
         document.getElementById("specific-theme-dropdown").style.display = "none";
-        document.getElementById("business-dropdown").style.display = "none";
-        document.getElementById("education-dropdown").style.display = "none";
+    }
 
-    }
-    else if (this.value === "Business") {
-        document.getElementById("animals-dropdown").style.display = "none";
+    else if (this.value === "Ecosystem") {
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "block";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "none";
         document.getElementById("specific-theme-dropdown").style.display = "none";
-        document.getElementById("business-dropdown").style.display = "block";
-        document.getElementById("education-dropdown").style.display = "none";
     }
-    else if (this.value === "Education") {
-        document.getElementById("animals-dropdown").style.display = "none";
+        
+    else if (this.value === "Entertainment") {
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "block";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "none";
         document.getElementById("specific-theme-dropdown").style.display = "none";
-        document.getElementById("business-dropdown").style.display = "none";
-        document.getElementById("education-dropdown").style.display = "block";
     }
+        
+    else if (this.value === "Leisure") {
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "block";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "none";
+        document.getElementById("specific-theme-dropdown").style.display = "none";
+    }
+        
+    else if (this.value === "Life") {
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "block";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "none";
+        document.getElementById("specific-theme-dropdown").style.display = "none";
+    }
+        
+    else if (this.value === "Science & Tech") {
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "block";
+        document.getElementById("sports-dropdown").style.display = "none";
+        document.getElementById("specific-theme-dropdown").style.display = "none";
+    }
+    else if (this.value === "Sports") {
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "block";
+        document.getElementById("specific-theme-dropdown").style.display = "none";
+    }
+        
     else if (this.value === "") {
-        document.getElementById("animals-dropdown").style.display = "none";
+        document.getElementById("business-finance-dropdown").style.display = "none";
+        document.getElementById("ecosystem-dropdown").style.display = "none";
+        document.getElementById("entertainment-dropdown").style.display = "none";
+        document.getElementById("leisure-dropdown").style.display = "none";
+        document.getElementById("life-dropdown").style.display = "none";
+        document.getElementById("science-tech-dropdown").style.display = "none";
+        document.getElementById("sports-dropdown").style.display = "none";
         document.getElementById("specific-theme-dropdown").style.display = "block";
-        document.getElementById("business-dropdown").style.display = "none";
-        document.getElementById("education-dropdown").style.display = "none";
     }
+
     for (let i = 0; i < document.getElementsByClassName('theme-deselect').length; i++) {
         document.getElementsByClassName('theme-deselect')[i].value = "";
     }
@@ -195,7 +257,6 @@ document.getElementById("general-style-dropdown").addEventListener("change", fun
         document.getElementById("specific-style-dropdown").style.display = "none";
         document.getElementById("neutral-dropdown").style.display = "none";
         document.getElementById("negative-dropdown").style.display = "none";
-
     }
     else if (this.value === "Neutral") {
         document.getElementById("positive-dropdown").style.display = "none";
