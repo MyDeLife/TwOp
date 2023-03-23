@@ -25,24 +25,27 @@ const specificTheme = function () {
     return values.join("")
 }
 
-let generalTheme = document.getElementById("general-themes-dropdown").options[document.getElementById("general-themes-dropdown").selectedIndex].value;
+
 
 const getVoice = function () {
-    if (`${generalTheme}` === "") { return '' }
-    if (`${specificTheme()}` !== "") {
+    let generalTheme = document.getElementById("general-themes-dropdown").options[document.getElementById("general-themes-dropdown").selectedIndex].value;
+
+    if (generalTheme === "") { return '' }
+    if (specificTheme() !== "") {
 
         for (let key in voices) {
-            if (key === `${ specificTheme() }`) {
+            if (key === specificTheme()) {
                 return `8. Write it in the style of ${voices[key]} without mentioning the name in the response.`;
             }
         }
 
     } for (let key in voices) {
-        if (key === `${generalTheme}`) {
+        if (key === generalTheme) {
             return `8. Write it in the style of ${voices[key]} without mentioning the name in the response.`;
         }
     }
 }
+
 
 
 const generate = async (prompt) => {
@@ -89,7 +92,8 @@ const generateCompletionAction = async () => {
     let keywords = document.getElementById("keywords").value;
 
     // Get user selection from dropdown menus
-    
+    let generalTheme = document.getElementById("general-themes-dropdown").options[document.getElementById("general-themes-dropdown").selectedIndex].value;
+
     let generalStyle = document.getElementById("general-style-dropdown").options[document.getElementById("general-style-dropdown").selectedIndex].value;
     let specificStyle = function () {
         let dropdowns = document.getElementsByClassName("style-deselect");
