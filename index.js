@@ -291,10 +291,14 @@ function resetAll() {
     for (let i = 0; i < document.getElementsByClassName('dropdown-element').length; i++) {
         document.getElementsByClassName('dropdown-element')[i].value = "";
     };
-    document.getElementById("animals-dropdown").style.display = "none";
+    document.getElementById("business-finance-dropdown").style.display = "none";
+    document.getElementById("ecosystem-dropdown").style.display = "none";
+    document.getElementById("entertainment-dropdown").style.display = "none";
+    document.getElementById("leisure-dropdown").style.display = "none";
+    document.getElementById("life-dropdown").style.display = "none";
+    document.getElementById("science-tech-dropdown").style.display = "none";
+    document.getElementById("sports-dropdown").style.display = "none";
     document.getElementById("specific-theme-dropdown").style.display = "block";
-    document.getElementById("business-dropdown").style.display = "none";
-    document.getElementById("education-dropdown").style.display = "none";
     document.getElementById("positive-dropdown").style.display = "none";
     document.getElementById("specific-style-dropdown").style.display = "block";
     document.getElementById("neutral-dropdown").style.display = "none";
