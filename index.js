@@ -277,7 +277,7 @@ document.getElementById("general-style-dropdown").addEventListener("change", fun
         document.getElementById("negative-dropdown").style.display = "none";
     }
 
-    for (let i = 0; i < document.getElementsByClassName('theme-deselect').length; i++) {
+    for (let i = 0; i < document.getElementsByClassName('style-deselect').length; i++) {
         document.getElementsByClassName('style-deselect')[i].value = "";
     }
 });
