@@ -303,6 +303,7 @@ function resetAll() {
     document.getElementById("specific-style-dropdown").style.display = "block";
     document.getElementById("neutral-dropdown").style.display = "none";
     document.getElementById("negative-dropdown").style.display = "none";
+    document.getElementById("output_text").style.background = 'white';
 }
 
 document.getElementById("button_reset").addEventListener("click", resetAll);
