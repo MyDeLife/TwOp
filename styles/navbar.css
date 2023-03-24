@@ -56,7 +56,7 @@
     .nav-menu {
         position: fixed;
         right: -100%;
-        top: 3.5rem;
+        top: 2.5rem;
         flex-direction: column;
         background: linear-gradient(var(--color3) 2%,
                 var(--color2) 10%,
