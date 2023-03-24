@@ -117,9 +117,9 @@ const generateCompletionAction = async () => {
         const firstPrompt = `Provide a tweet text that must meet all of the following criteria:
 
         1. The topic is: ${topic}.
-        2. The theme is ${generalTheme} with a focus on ${specificTheme()}.
+        2. The theme is ${generalTheme.toLowerCase()} with a focus on ${specificTheme().toLowerCase()}.
         3. It must include the following words: ${keywords}.
-        4. The tone should be ${generalStyle}, specifically with the characteristics of: ${specificStyle()}.
+        4. The tone should be ${generalStyle.toLowerCase()}, specifically with the characteristics of: ${specificStyle().toLowerCase()}.
         5. Do not use adjectives or verbs in your suggestion more than once.
         6. Include emojis and NEVER include hashtags (i.e. #tweet).
         7. Consider each digit, letter, whitespace, punctuation and symbol as one character. Your response should not exceed a total of 300 characters.
@@ -133,7 +133,7 @@ const generateCompletionAction = async () => {
 
 
         const secondCompletion = await generate(secondPrompt);
-        let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+|"/g, '').trimStart().replace(/^[.!?]\s|[.!?]\s(?=[A-Z])/g, "$&\n\n");
+        let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+|"/g, '').trimStart().replace(/^[.!?]\s|[.!?]\s(?=[A-Z])/, "$&\n\n");
         if (output !== "") {
             document.getElementById("output_text").innerHTML = output;
             document.getElementById("output_text").style.fontStyle = 'normal';
@@ -200,18 +200,18 @@ const voices = {
     "TV Series": "Tina Fey",
     Leisure: "Martha Stewart", //general theme
     Arts: "Andy Warhol",
-    Bars: "Jack Sparrow",
+    Bars: "Gordon Ramsay",
     Books: "Stephen King",
     Cooking: "Rachel Ray",
     Fashion: "Donatella Versace",
-    Firearms: "John Wayne",
-    Fitness: "Arnold Schwarzenegger",
+    Firearms: "Ronald Reagan",
+    Fitness: "Harley Pasternak",
     Gambling: "Daniel Negreanu",
     Hobbies: "Emma Watson",
     Photography: "Annie Leibovitz",
     Restaurants: "Gordon Ramsay",
-    Shopping: "Kim Kardashian",
-    "Social Networking": "Peter Griffin (from Family Guy)",
+    Shopping: "Oprah Winfrey",
+    "Social Networking": "Ellen DeGeneres",
     Travel: "Ernest Hemingway",
     Life: "Nigella Lawson", //general theme
     Career: "Sheryl Sandberg",
@@ -220,11 +220,12 @@ const voices = {
     Dogs: "Snoopy",
     Education: "Michael Fullan",
     Family: "Dr. Phil",
+    Friends: "Morgan Freeman",
     Gardening: "Tovah Martin",
     Health: "Dr. Sanjay Gupta",
     Holidays: "Mark Twain",
     "Home Decorating": "Christina Anstead",
-    Parenting: "Dr. Seuss",
+    Parenting: "Dr. Phil",
     Religion: "Mother Teresa",
     "Science & Tech": "Elon Musk", //general theme
     Aerospace: "Captain Kirk",
@@ -239,20 +240,19 @@ const voices = {
     "Sports": "Jim Nantz", //general theme
     "American Football": "Tom Brady",
     Athletics: "Usain Bolt",
-    Baseball: "Babe Ruth",
+    Baseball: "Alex Rodriguez",
     Boxing: "Muhammad Ali",
     Cricket: "Sachin Tendulkar",
     "Extreme Sports": "Shaun White",
     "Football (Soccer)": "Gary Lineker",
     Golf: "Arnold Palmer",
     "Ice Hockey": "Wayne Gretzky",
-    "Martial Arts": "Chuck Norris",
+    "Martial Arts": "Bruce Lee",
     Motorsport: "Lewis Hamilton",
-    Rugby: "Martin Johnson",
+    Rugby: "Martin Johnson (English rugby player)",
     Surfing: "Stephanie Gilmore",
     Tennis: "John McEnroe",
     "Winter Sports": "Lindsey Vonn",
     Wrestling: "Hulk Hogan",
-
 };
 
