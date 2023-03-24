@@ -122,7 +122,7 @@ const generateCompletionAction = async () => {
         4. The tone should be ${generalStyle}, specifically with the characteristics of: ${specificStyle()}.
         5. Do not use adjectives or verbs in your suggestion more than once.
         6. Include emojis and NEVER include hashtags (i.e. #tweet).
-        7. Consider each digit, letter, whitespace, punctuation and symbol as one character. Your response should not exceed a total of 280 characters.
+        7. Consider each digit, letter, whitespace, punctuation and symbol as one character. Your response should not exceed a total of 300 characters.
         ${getVoice()}`
 
         const firstCompletion = await generate(
@@ -133,7 +133,7 @@ const generateCompletionAction = async () => {
 
 
         const secondCompletion = await generate(secondPrompt);
-        let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+/g, '').trimStart();
+        let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+|"/g, '').trimStart().replace(/^[.!?]\s|[.!?]\s(?=[A-Z])/g, "$&\n\n");
         if (output !== "") {
             document.getElementById("output_text").innerHTML = output;
             document.getElementById("output_text").style.fontStyle = 'normal';
@@ -179,23 +179,23 @@ const voices = {
     Trading: "Jim Cramer",
     Ecosystem: "Morgan Freeman", //general theme
     Climate: "Al Roker",
-    Demonstration: "Martin Luther King Jr",
+    Protest: "Martin Luther King Jr",
     Energy: "Captain Planet",
     Law: "Ruth Bader Ginsburg",
     Nature: "James Earl Jones",
     News: "Bill Maher",
     Politics: "Margaret Thatcher",
     "Real Estate": "Donald Trump",
-    War: "George Washington",
+    War: "Winston Churchill",
     Wildlife: "Jeff Corwin",
     Entertainment: "Ellen DeGeneres", //general theme
     Celebrities: "Billy Crystal",
-    Dancing: "Austin Powers",
+    Dancing: "John Travolta",
     Games: "Robin Williams",
     Movies: "Angelina Jolie",
-    Music: "Beyonce",
+    Music: "Whitney Houston",
     Documentaries: "David Attenborough",
-    "Game Shows": "Terry Crews",
+    "Game Shows": "Nick Cannon",
     "Reality Shows": "Simon Cowell",
     "TV Series": "Tina Fey",
     Leisure: "Martha Stewart", //general theme
