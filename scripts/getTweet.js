@@ -30,7 +30,7 @@ const specificTheme = function () {
 const getVoice = function () {
     let generalTheme = document.getElementById("general-themes-dropdown").options[document.getElementById("general-themes-dropdown").selectedIndex].value;
 
-    if (generalTheme === "") { return '' }
+    if (generalTheme === "") { return `` }
     if (specificTheme() !== "") {
 
         for (let key in voices) {
@@ -80,7 +80,10 @@ const generate = async (prompt) => {
     } catch (error) {
         console.log(error);
 
-        document.getElementById("output_text").innerHTML = 'error1';
+        document.getElementById("output_text").innerHTML = `The OpenAI server had an error while processing your request.
+        
+Please try again.`;
+        document.getElementById("output_text").style.fontStyle = 'italic';
     }
 }
 
@@ -109,6 +112,8 @@ const generateCompletionAction = async () => {
 
     try {
         document.getElementById("output_text").innerHTML = 'generating...';
+        document.getElementById("output_text").style.background = 'white';
+        document.getElementById("output_text").style.fontStyle = 'italic';
         const firstPrompt = `Provide a tweet text that must meet all of the following criteria:
 
         1. The topic is: ${topic}.
@@ -129,27 +134,26 @@ const generateCompletionAction = async () => {
 
         const secondCompletion = await generate(secondPrompt);
         let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+/g, '').trimStart();
-        document.getElementById("output_text").innerHTML = output;
-
-
+        if (output !== "") {
+            document.getElementById("output_text").innerHTML = output;
+            document.getElementById("output_text").style.fontStyle = 'normal';
+        }
+        else {
+            document.getElementById("output_text").style.background = '#ececec';
+            document.getElementById("output_text").style.fontStyle = 'italic';
+            document.getElementById("output_text").innerHTML = `The OpenAI server had an error while processing your request.
+        
+Please try again.`;
+        }
     } catch (error) {
 
         console.log(error);
 
         document.getElementById("output_text").innerHTML = 'Invalid or missing API key';
+        document.getElementById("output_text").style.fontStyle = 'italic';
+        document.getElementById("output_text").style.background = '#ececec';
     }
 };
-
-
-
-/*
-const sendMessage = () => {
-    let output = secondCompletion.text; // Get output response from OpenAI API 
-
-    let textarea = document.getElementById("output_text"); // Get textarea element 
-
-    textarea.innerHTML = output; // Set output response as innerHTML of textarea element 
-}; */
 
 
 
@@ -226,13 +230,13 @@ const voices = {
     Aerospace: "Captain Kirk",
     "Artificial Intelligence": "HAL 9000",
     "Augmented Reality": "Optimus Prime",
-    "Autonomous Systems": "Data (from Star Trek)",
-    "Biomedical Engineering": "Data (from Star Trek)",
-    Cybersecurity: "Data (from Star Trek)",
+    "Autonomous Systems": "HAL 9000",
+    "Biomedical Engineering": "HAL 9000",
+    Cybersecurity: "HAL 9000",
     "Quantum Computing": "Sheldon Cooper",
     Robotics: "C3PO",
     Web3: "Vitalik Buterin",
-    "Sports": "Serena Williams", //general theme
+    "Sports": "Jim Nantz", //general theme
     "American Football": "Tom Brady",
     Athletics: "Usain Bolt",
     Baseball: "Babe Ruth",
