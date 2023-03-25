@@ -24,7 +24,7 @@
 - Topic - headline or brief description of tweet context (ie "announement of Italian restaurant opening")
 - Keywords - any words that must be included in the tweet response (ie "delicious")
 - Theme - an overarching and specific theme describing context (ie "entertainment / dining")
-- Style - an overarching and specific mood aimed to be expressed with the tweet (ie "positive / excited")
+- Tone - an overarching and specific mood/style aimed to be expressed with the tweet (ie "positive / excited")
 
 The user entered values are pulled into a prompt and sent to OpenAI to generate a tweet. A second follow-up request is made to OpenAI to fine-tune the first result. The second result is then returned in the UI which the user can use as inspiration for sending a tweet. Here is an actual result using the above example values as input:
 
