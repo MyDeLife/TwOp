@@ -23,16 +23,17 @@
 
 - Topic - headline or brief description of tweet context (ie "announcement of Italian restaurant opening")
 - Keywords - any words that must be included in the tweet response (ie "delicious")
-- Theme - an overarching and specific theme describing context (ie "entertainment / dining")
+- Theme - an overarching and specific theme describing context (ie "leisure / restaurant")
 - Tone - an overarching and specific mood/style aimed to be expressed with the tweet (ie "positive / excited")
 
 The user entered values are pulled into a prompt and sent to OpenAI to generate a tweet. A second follow-up request is made to OpenAI to fine-tune the first result. The second result is then returned in the UI which the user can use as inspiration for posting a tweet. Here is an actual result using the above example values as input:
 
 <br>
 
- > 🍝😋 
+>```
+>We're thrilled to announce the grand opening of our new Italian restaurant!
 >
->We're thrilled to share that a new Italian eatery is opening! Get ready for some of the most delicious dishes you've ever tasted! We can't wait to have you join us!
+>Come and sample our deliciously crafted dishes and enjoy an unforgettable dining experience.
 
 <br>
 
@@ -55,7 +56,7 @@ To install the official Node.js library, run the following command in your Node.
 
 <br>
 
-TwOp uses the Complete mode specified in the official [OpenAI API docs](https://platform.openai.com/docs/api-reference/introduction) via the following URL: https://api.openai.com/v1/completions.
+TwOp uses the Complete mode specified in the official [OpenAI API docs](https://platform.openai.com/docs/introduction/overview) described here: https://api.openai.com/v1/completions.
 
 <br>
 
@@ -64,22 +65,21 @@ The main function of the code is `generateCompletionAction` inside the `getTweet
 <br>
 
 ### User API Key
-To use this code, the users need an OpenAI API key stored in the local storage. The code contains a function `getKey` that retrieves the key from storage and decodes it.
+The application saves the [OpenAI API key](https://platform.openai.com/docs/api-reference/introduction) from the user in the local storage via the `saveKey` function. The code contains a function `getKey` that retrieves the key from storage and decodes it.
 
-```
-const getKey = () => {
-  return new Promise((resolve, reject) => {
-    chrome.storage.local.get(['openai-key'], (result) => {
-      if (result['openai-key']) {
-        const decodedKey = atob(result['openai-key']);
-        resolve(decodedKey);
-      } else {
-        reject(new Error('Failed to retrieve openai-key'));
-      }
-    });
-  });
-};
-```
+>```
+>const getKey = () => {
+>  return new Promise((resolve, reject) => {
+>    chrome.storage.local.get(['openai-key'], (result) => {
+>      if (result['openai-key']) {
+>        const decodedKey = atob(result['openai-key']);
+>        resolve(decodedKey);
+>      } else {
+>        reject(new Error('Failed to retrieve openai-key'));
+>      }
+>    });
+>  });
+>};
 
 <br>
 
