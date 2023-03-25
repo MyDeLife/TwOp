@@ -7,9 +7,10 @@
         "48": "assets/48.png",
         "72": "assets/72.png",
         "96": "assets/96.png",
+        "128": "assets/128.png",
         "144": "assets/144.png",
-        "512": "assets/144.png",
-        "1024": "assets/144.png"
+        "512": "assets/512.png",
+        "1024": "assets/1024.png"
     },
     "action": {
         "default_popup": "index.html",
