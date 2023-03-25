@@ -60,12 +60,12 @@ TwOp uses the Complete mode specified in the official [OpenAI API docs](https://
 
 <br>
 
-The main function of the code is `generateCompletionAction` inside the `getTweet.js` file. This function takes user input from text fields and dropdown menus and calls the OpenAI completions endpoint to generate a tweet. It then cleans up the tweet by removing hashtag references and emojis, and returns the cleaned up tweet. The `generateCompletionAction` function is called with an event listener attached to a submit button.
+The main function of the code is `generateCompletionAction()` inside the `getTweet.js` file. This function takes user input from text fields and dropdown menus and calls the OpenAI completions endpoint to generate a tweet. It then cleans up the tweet by removing hashtag references and emojis, and returns the cleaned up tweet. The `generateCompletionAction()` function is called with an event listener attached to a submit button.
 
 <br>
 
 ### User API Key
-The application saves the [OpenAI API key](https://platform.openai.com/docs/api-reference/introduction) from the user in the local storage via the `saveKey` function. The code contains a function `getKey` that retrieves the key from storage and decodes it.
+The application saves the [OpenAI API key](https://platform.openai.com/docs/api-reference/introduction) from the user in the local storage via the `saveKey()` function. The code contains a function `getKey()` that retrieves the key from storage and decodes it.
 
 >```
 >const getKey = () => {
