@@ -122,7 +122,7 @@ const generateCompletionAction = async () => {
         4. The tone should be ${generalStyle.toLowerCase()}, specifically with the characteristics of: ${specificStyle().toLowerCase()}.
         5. Do not use adjectives or verbs in your suggestion more than once.
         6. Include emojis and NEVER include hashtags (i.e. #tweet).
-        7. Consider each digit, letter, whitespace, punctuation and symbol as one character. Your response should not exceed a total of 300 characters.
+        7. Consider each digit, letter, whitespace, punctuation and symbol as one character. Your response should not exceed a total of 305 characters.
         ${getVoice()}`
 
         const firstCompletion = await generate(
@@ -135,7 +135,7 @@ const generateCompletionAction = async () => {
         const secondCompletion = await generate(secondPrompt);
         let output = secondCompletion.choices[0].text.replace(/^\S+\s*/, "").trimStart().replace(/#\S+|"/g, '').trimStart().replace(/^[.!?]\s|[.!?]\s(?=[A-Z])/, "$&\n\n");
         if (output !== "") {
-            document.getElementById("output_text").innerHTML = output;
+            document.getElementById("output_text").innerHTML = output // + "\n\n\n" + secondCompletion.choices[0].text; // commented out code is raw API data for testing purposes
             document.getElementById("output_text").style.fontStyle = 'normal';
         }
         else {
