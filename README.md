@@ -1,12 +1,14 @@
+<img src="./assets/96.png">
+
 # TwOp - Tweet Optimizer
- <h3>Generate optimized tweets via OpenAI</h1>
+ <h3><i>Generate optimized tweets via OpenAI</i></h1>
 <br>
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#1-about-the-application">About The Application</a></li>
+    <li><a href="#1-about-the-app">About the App</a></li>
       <li><a href="#2-prior-work">Prior Work</a></li>
-    <li><a href="#3-twop-application-docs">TwOp Application Docs</a></li>
+    <li><a href="#3-twop-app-docs">TwOp App Docs</a></li>
     <ul>
         <li><a href="#openai-api">OpenAI API</a></li>
         <li><a href="#user-api-key">User API Key</a></li>
@@ -18,7 +20,7 @@
 </details>
 <br>
 
-## 1. About The Application
+## 1. About the App
  TwOp is a Chrome browser extension which returns engaging tweets based on user input. The tweets are AI generated via the API request method of OpenAI with Node.js. TwOp captures four sources of user information to identify the context of the desired tweet:
 
 - Topic - headline or brief description of tweet context (ie "announcement of Italian restaurant opening")
@@ -47,7 +49,7 @@ A key piece of the functionality of this app is derived from the starter templat
 
 <br>
 
-## 3. TwOp Application Docs
+## 3. TwOp App Docs
 
 
 ### OpenAI API
@@ -65,7 +67,7 @@ The main function of the code is `generateCompletionAction()` inside the `getTwe
 <br>
 
 ### User API Key
-The application saves the [OpenAI API key](https://platform.openai.com/docs/api-reference/introduction) from the user in the local storage via the `saveKey()` function. The code contains a function `getKey()` that retrieves the key from storage and decodes it.
+The app saves the [OpenAI API key](https://platform.openai.com/docs/api-reference/introduction) from the user in the local storage via the `saveKey()` function. The code contains a function `getKey()` that retrieves the key from storage and decodes it.
 
 >```
 >const getKey = () => {
