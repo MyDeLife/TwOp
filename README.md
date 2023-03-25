@@ -19,14 +19,14 @@
 <br>
 
 ## 1. About The Application
- TwOp is a Chrome browser extension which returns engaging tweets based on user input . The tweets are AI generated via the API request method of OpenAI with Node.js. TwOp captures four sources of user information to identify the context of the desired tweet:
+ TwOp is a Chrome browser extension which returns engaging tweets based on user input. The tweets are AI generated via the API request method of OpenAI with Node.js. TwOp captures four sources of user information to identify the context of the desired tweet:
 
-- Topic - headline or brief description of tweet context (ie "announement of Italian restaurant opening")
+- Topic - headline or brief description of tweet context (ie "announcement of Italian restaurant opening")
 - Keywords - any words that must be included in the tweet response (ie "delicious")
 - Theme - an overarching and specific theme describing context (ie "entertainment / dining")
 - Tone - an overarching and specific mood/style aimed to be expressed with the tweet (ie "positive / excited")
 
-The user entered values are pulled into a prompt and sent to OpenAI to generate a tweet. A second follow-up request is made to OpenAI to fine-tune the first result. The second result is then returned in the UI which the user can use as inspiration for sending a tweet. Here is an actual result using the above example values as input:
+The user entered values are pulled into a prompt and sent to OpenAI to generate a tweet. A second follow-up request is made to OpenAI to fine-tune the first result. The second result is then returned in the UI which the user can use as inspiration for posting a tweet. Here is an actual result using the above example values as input:
 
 <br>
 
@@ -42,7 +42,7 @@ The query can be called multiple times without limits and the AI produces a uniq
 
 
 ## 2. Prior Work
-A key piece of the functionality of this app is derived from the starter template of the [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project by [Buildspace](https://buildspace.so/). It describes the development of a browser extension that generates a blog post in Calmly based off selected text on a website using a multi-chain prompt with OpenAI. The open source code provided by Buildspace has inspired the creation of TwOp.
+A key piece of the functionality of this app is derived from the starter template of the [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project by [Buildspace](https://buildspace.so/). It describes the development of a browser extension that generates a blog post in Calmly based off of selected text on a website using a multi-chain prompt with OpenAI. The open source code provided by Buildspace has inspired the creation of TwOp.
 
 <br>
 
@@ -64,7 +64,7 @@ The main function of the code is `generateCompletionAction` inside the `getTweet
 <br>
 
 ### User API Key
-To use this code, the users needs an OpenAI API key stored in the local storage. The code contains a function `getKey` that retrieves the key from storage and decodes it.
+To use this code, the users need an OpenAI API key stored in the local storage. The code contains a function `getKey` that retrieves the key from storage and decodes it.
 
 ```
 const getKey = () => {
