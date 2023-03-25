@@ -1,4 +1,6 @@
 /*---GENERIC---*/
+
+
 const checkForKey = () => {
     return new Promise((resolve, reject) => {
         chrome.storage.local.get(['openai-key'], (result) => {
@@ -26,7 +28,7 @@ window.addEventListener('load', () => {
 });
 
 
-//HAMBURGER
+//NAVBAR
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -75,6 +77,15 @@ document.getElementById('navlink_Get_Tweet').addEventListener('click', getTweet)
 document.getElementById('navlink_About').addEventListener('click', about);
 
 
+// CLOSE NAVBAR
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) {
+        document.querySelector('.nav-menu').classList.remove('active');
+        document.querySelector('.hamburger').classList.remove('active');
+    }
+});
+
+
 
 
 
@@ -92,7 +103,7 @@ const saveKey = () => {
     if (input !== "") {
 
 
-        // Encode String
+        // Encode string
         const encodedValue = encode(input);
 
         // Save to google storage
@@ -316,10 +327,3 @@ document.getElementById("button_copy_text").addEventListener("click", () => {
     document.execCommand("copy");
 });
 
-// CLOSE NAVBAR
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar')) {
-        document.querySelector('.nav-menu').classList.remove('active');
-        document.querySelector('.hamburger').classList.remove('active');
-    }
-});
