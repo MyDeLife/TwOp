@@ -94,7 +94,7 @@
                 <label for="keywords"><textarea placeholder=" Add keyword(s)" id="keywords" type="text"
                         class="input-field"></textarea></label>
             </div>
-            <p id="get-a-tweet-text2">Personalize your tweet by selecting your theme and style</p>
+            <p id="get-a-tweet-text2">Personalize your tweet by selecting your theme and tone</p>
             <div id="dropdowns">
                 <div id="dropdowns-general">
                     <div id="dropdowns-general-element">
@@ -102,7 +102,7 @@
                             <label for="general-themes-dropdown">
                                 <select id="general-themes-dropdown" name="general-themes-dropdown"
                                     class="dropdown-element">
-                                    <option value="">Select General Theme</option>
+                                    <option value="">Select general theme</option>
                                     <option>Business & Finance</option>
                                     <option>Ecosystem</option>
                                     <option>Entertainment</option>
@@ -117,9 +117,9 @@
                             <label for="general-style-dropdown">
                                 <select id="general-style-dropdown" name="general-style-dropdown"
                                     class="dropdown-element">
-                                    <option value="">Select General Style</option>
+                                    <option value="">Select general tone</option>
                                     <option>Positive</option>
-                                    <option>Neutral</option>
+                                    <option value="expressive">Neutral</option>
                                     <option>Negative</option>
                                 </select>
                             </label>
@@ -136,7 +136,7 @@
                             <label for="specific-theme-dropdown">
                                 <select id="specific-theme-dropdown" name="specific-theme-dropdown"
                                     class="dropdown-element" disabled="true">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                 </select>
                             </label>
                         </fieldset>
@@ -145,7 +145,7 @@
                             <label for="business-finance-dropdown">
                                 <select id="business-finance-dropdown" name="business-finance-dropdown"
                                     class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>Cryptocurrency</option>
                                     <option>Economics</option>
                                     <option>Financial Planning</option>
@@ -165,7 +165,7 @@
                         <fieldset id="ecosystem" class="dropdown-themes dropdown-actual dropdown-specific">
                             <label for="ecosystem-dropdown">
                                 <select id="ecosystem-dropdown" name="ecosystem-dropdown" class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>Climate</option>
                                     <option>Energy</option>
                                     <option>Law</option>
@@ -184,7 +184,7 @@
                             <label for="entertainment-dropdown">
                                 <select id="entertainment-dropdown" name="entertainment-dropdown"
                                     class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>Celebrities</option>
                                     <option>Dancing</option>
                                     <option>Documentaries</option>
@@ -201,7 +201,7 @@
                         <fieldset id="leisure" class="dropdown-themes dropdown-actual dropdown-specific">
                             <label for="leisure-dropdown">
                                 <select id="leisure-dropdown" name="leisure-dropdown" class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>Arts</option>
                                     <option>Bars</option>
                                     <option>Books</option>
@@ -224,7 +224,7 @@
                             <label for="life-dropdown">
                                 <select id="life-dropdown" name="life-dropdown"
                                     class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>Career</option>
                                     <option>Cats</option>
                                     <option>Dating</option>
@@ -245,7 +245,7 @@
                         <fieldset id="science-tech" class="dropdown-themes dropdown-actual dropdown-specific">
                             <label for="science-tech-dropdown">
                                 <select id="science-tech-dropdown" name="science-tech-dropdown" class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>Aerospace</option>
                                     <option>Artificial Intelligence</option>
                                     <option>Augmented Reality</option>
@@ -262,7 +262,7 @@
                         <fieldset id="sports" class="dropdown-themes dropdown-actual dropdown-specific">
                             <label for="sports-dropdown">
                                 <select id="sports-dropdown" name="sports-dropdown" class="dropdown-element theme-deselect">
-                                    <option value="">Select Specific Theme</option>
+                                    <option value="">Select specific theme</option>
                                     <option>American Football</option>
                                     <option>Athletics</option>
                                     <option>Baseball</option>
@@ -287,7 +287,7 @@
                             <label for="specific-style-dropdown">
                                 <select id="specific-style-dropdown" name="specific-style-dropdown"
                                     class="dropdown-element" disabled="true">
-                                    <option value="">Select Specific Style</option>
+                                    <option value="">Select specific tone</option>
                                 </select>
                             </label>
                         </fieldset>
@@ -296,11 +296,10 @@
                             <label for="positive-dropdown">
                                 <select id="positive-dropdown" name="positive-dropdown"
                                     class="dropdown-element style-deselect">
-                                    <option value="">Select Specific Style</option>
+                                    <option value="">Select specific tone</option>
                                     <option>Agreeable</option>
                                     <option>Awestruck</option>
                                     <option>Brave</option>
-                                    <option>Cheerful</option>
                                     <option>Comical</option>
                                     <option>Energetic</option>
                                     <option>Excited</option>
@@ -324,7 +323,7 @@
                             <label for="neutral-dropdown">
                                 <select id="neutral-dropdown" name="neutral-dropdown"
                                     class="dropdown-element style-deselect">
-                                    <option value="">Select Specific Style</option>
+                                    <option value="">Select specific tone</option>
                                     <option>Ambitious</option>
                                     <option>Assertive</option>
                                     <option>Calm</option>
@@ -338,14 +337,12 @@
                                     <option>Indifferent</option>
                                     <option>Mysterious</option>
                                     <option>Nervous</option>
-                                    <option>Nostalgic</option>
                                     <option>Peaceful</option>
                                     <option>Prepared</option>
                                     <option>Realistic</option>
                                     <option>Restless</option>
                                     <option>Romantic</option>
                                     <option>Sentimental</option>
-                                    <option>Serious</option>
                                     <option>Shy</option>
                                     <option>Silly</option>
                                 </select>
@@ -356,7 +353,7 @@
                             <label for="negative-dropdown">
                                 <select id="negative-dropdown" name="negative-dropdown"
                                     class="dropdown-element style-deselect">
-                                    <option value="">Select Specific Style</option>
+                                    <option value="">Select specific tone</option>
                                     <option>Angry</option>
                                     <option>Anxious</option>
                                     <option>Burdened</option>
@@ -375,8 +372,8 @@
                                     <option>Pessimistic</option>
                                     <option>Resentful</option>
                                     <option>Sad</option>
+                                    <option>Sarcastic</option>
                                     <option>Skeptical</option>
-                                    <option>Snippy</option>
                                     <option>Worried</option>
                                 </select>
                             </label>
