@@ -84,7 +84,7 @@ The application saves the [OpenAI API key](https://platform.openai.com/docs/api-
 <br>
 
 ## 4. Future Work
-**Social media platform expansion** - The app can be expanded to produce adequate results for other social media platforms like Instagram or Facebook. Hard coded references to "tweet" can be turned into variable user inputs using `objects`. One of the key differences between these platforms are the different character length limitations which can be mapped `values` inside the social media platform `object`.
+**Social media platform expansion** - The app can be upgraded to produce adequate results for other social media platforms. Hard coded references to "tweet" can be updated into variable user selection inputs (ie Twitter, Facebook, Instagram, etc) and the code then executes those inputs accordingly, where applicable. For example, one of the key differences between social media platforms are the different character length limitations which could be mapped `values` inside an `object` for social media platforms.
 
 **Direct insert** - The app could also be expanded by inserting the output directly into the corresponding social media platform fields similar to how Buildspace has demonstrated it for Calmly.
 
