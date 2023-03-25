@@ -73,7 +73,6 @@ const generate = async (prompt) => {
             }),
         });
 
-        // Select the top choice and send back
         const completion = await completionCheck.json();
         return completion;
 
