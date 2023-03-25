@@ -315,3 +315,11 @@ document.getElementById("button_copy_text").addEventListener("click", () => {
     copyText.select();
     document.execCommand("copy");
 });
+
+// CLOSE NAVBAR
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) {
+        document.querySelector('.nav-menu').classList.remove('active');
+        document.querySelector('.hamburger').classList.remove('active');
+    }
+});
