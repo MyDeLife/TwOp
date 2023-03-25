@@ -258,7 +258,7 @@ document.getElementById("general-style-dropdown").addEventListener("change", fun
         document.getElementById("neutral-dropdown").style.display = "none";
         document.getElementById("negative-dropdown").style.display = "none";
     }
-    else if (this.value === "Neutral") {
+    else if (this.value === "expressive") {
         document.getElementById("positive-dropdown").style.display = "none";
         document.getElementById("specific-style-dropdown").style.display = "none";
         document.getElementById("neutral-dropdown").style.display = "block";
