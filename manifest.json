@@ -1,6 +1,6 @@
 {
     "name": "TwOp",
-    "description": "Advancing ideas to stunning, ready-to-send tweet suggestions",
+    "description": "Generate optimized tweets via OpenAI's GPT engine",
     "version": "1.0",
     "manifest_version": 3,
     "icons": {
