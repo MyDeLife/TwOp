@@ -17,9 +17,10 @@
         "default_title": "TwOp - Tweet Optimizer"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "activeTab"
     ],
     "host_permissions": [
-        "https://*/*"
+        "https://api.openai.com/"
     ]
 }
