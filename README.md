@@ -39,7 +39,7 @@ The user entered values are pulled into a prompt and sent to OpenAI to generate 
 
 <br>
 
-The query can be called multiple times without limits and the AI produces a unique result each time. The TwOp extension is available in the chrome web store [insert link when available].
+The query can be called multiple times without limits and the AI produces a unique result each time. The TwOp extension is available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/twop/ahcakaodknfaaiebkahcmbknohgggebd).
 
 <br>
 
