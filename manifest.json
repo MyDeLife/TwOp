@@ -1,7 +1,7 @@
 {
     "name": "TwOp",
     "description": "Generate optimized tweets via OpenAI's GPT engine",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 3,
     "icons": {
         "48": "assets/48.png",
@@ -20,6 +20,6 @@
         "storage"
     ],
     "host_permissions": [
-        "https://api.openai.com/"
+        "https://*.openai.com/*"
     ]
 }
